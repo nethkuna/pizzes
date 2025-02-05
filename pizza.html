@@ -1,31 +1,19 @@
-<htm>
-<head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    <title>FES LA TEVA PIZZA</title>
-</head>
-<body>
-    <?php
-    $preu = 8;
-    $IVA = 21;
-
-    if (empty($_GET['ingr'])) {
-        $pvp = ((100 + $IVA) / 100) * $preu;
-        echo "Has demanat només la pizza bàsica. El preu és $pvp € (IVA inclòs)<br>";
-        exit(0);
-    } else {
-        $pvp = ((100 + $IVA) / 100) * ($preu + count($_GET['ingr']));
-        echo "Has demanat la pizza bàsica amb:<br>";
-        foreach ($_GET['ingr'] as $ingredient) {
-            if ($ingredient) {
-                echo "* $ingredient<br>";
-            }
-        }
-        echo "El preu és $pvp € (IVA inclòs)<br>";
-        exit(0);
-    }
-
-    echo "<br>";
-    echo "Autor: dacomo<br>";
-    ?>
-</body>
+</html>
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+		<title>FES LA TEVA PIZZA</title>	
+	</head>  
+	<body>
+		<form action="pizza.php" method="GET">
+			<font face="Arial">
+				Ingredients extra (1€ per ingredient) que vols afegir a la pizza bàsica (8€):<br>
+				<input type="checkbox" name="ingr[]" value="Extra de formatge"/> Extra de formatge<br/>
+				<input type="checkbox" name="ingr[]" value="Carn de vedella"/> Carn de vedella<br/>
+				<input type="checkbox" name="ingr[]" value="Oli picant"/> Oli picant<br/>
+				<input type="checkbox" name="ingr[]" value="Embotit"/> Embotit<br/>
+				<input type="submit" value="Envia"/><input type="reset" value="Neteja"/>
+			</font>
+		</form>
+		Nom de l'administrador/desenvolupador: Jasofe Autor: Janeth Solano Fernandez<br>
+	</body>
 </html>
