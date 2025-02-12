@@ -23,5 +23,6 @@
           echo "<br>";
           echo "Autor: jasofe<br>";
      ?>
+     <a href="pizza.html">Retorna al formulari de selecció d’ingredients</a>
      </body>
 </html>
